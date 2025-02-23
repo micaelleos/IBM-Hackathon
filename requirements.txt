@@ -1,0 +1,17 @@
+pydantic 
+pandas
+git+https://github.com/ibm-granite-community/utils 
+docling 
+langchain 
+langchain-ibm 
+langchain-community 
+langchain-core 
+ibm-watsonx-ai 
+transformers
+replicate
+chromadb
+langchain-chroma
+langgraph
+streamlit
+SQLAlchemy
+python-dotenv
