@@ -8,11 +8,16 @@ side_bar()
 
 st.title("Regulation Directory")
 
-
-
 if "regulations" not in st.session_state:
     st.session_state.regulations = []
     st.session_state.regulations.append(regulation)
+
+if "current_regulation" not in st.session_state:
+    st.session_state.current_regulation = None
+
+def call_show_documents_page(regulation):
+    st.session_state.current_regulation = regulation
+    st.switch_page("pages/show_documents.py")
 
 def save_uploadedfile(uploaded_file):
     with pdfplumber.open(uploaded_file) as pdf:
@@ -32,7 +37,8 @@ def reg_bloc(regulation):
             st.write(f"**Title:** {regulation['title']}")
             st.write(f"**Status:** {regulation['status']}")
             st.write(f"**Text:** {regulation['text'][:200]}...")
-            st.button("See documents", use_container_width= True)
+            if st.button("See documents", use_container_width= True):
+                call_show_documents_page(regulation)
             # st.write(f"**Roles for approvel:**")
             # for i in regulation['docs']['roles'].keys():
             #     st.write(f"{i} - status: {regulation['docs']['roles'][i]}")

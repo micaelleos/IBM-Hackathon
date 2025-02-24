@@ -1,8 +1,12 @@
 import streamlit as st
 import time
 
+st.logo("logoComplyFlow.png",size="large")
+
 def side_bar():
     s = st.sidebar
+    with s:
+        st.markdown("# ComplyFlow")
     s.page_link("directory.py", label="Regulation Directory", icon="📂")
     with s:
         st.write("Workflow")
