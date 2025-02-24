@@ -8,20 +8,21 @@ st.title("Documents Details")
 if st.button("Back"):
     st.switch_page("directory.py")
 
-regulation = st.session_state.current_regulation
+regulation = st.session_state.show_regulation 
 
 
-with st.container(border=True, height= 500):
-    for doc in regulation["docs"]:
-        if doc == "text":
-            for i in regulation['docs'][doc]:
-                st.write(f"**{regulation['docs'][doc][i]['title']}:**")
-                st.write(f"{regulation['docs'][doc][i]['description']}")
-              
-        elif doc == "roles":
-            for r in regulation['docs'][doc]:
-                st.write(f"**{r}:** {regulation['docs'][doc][r]} ")
+
+for reg in regulation["docs"]:
+    with st.container(border=True, height= 500):
+        for doc in reg:
+            if doc == "text":
+                for i in reg[doc]:
+                    st.write(f"**{reg[doc][i]['title']}:**")
+                    st.write(f"{reg[doc][i]['description']}")
                 
-        else:
-            st.write(f"**{doc.capitalize()}**: {regulation['docs'][doc]}")
-        #st.write(regulation["docs"][doc]["description"])
+            elif doc == "roles":
+                for r in reg[doc]:
+                    st.write(f"**{r}:** {reg[doc][r]} ")
+                    
+            else:
+                st.write(f"**{doc.capitalize()}**: {reg[doc]}")

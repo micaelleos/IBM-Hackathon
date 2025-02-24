@@ -1,3 +1,5 @@
+import uuid
+
 text = """12 U.S. Code § 4301 - Findings and purpose
 (a)Findings
 The Congress hereby finds that economic stability would be enhanced, competition between depository institutions would be improved, and the ability of the consumer to make informed decisions regarding deposit accounts, and to verify accounts, would be strengthened if there was uniformity in the disclosure of terms and conditions on which interest is paid and fees are assessed in connection with such accounts.
@@ -9,4 +11,9 @@ It is the purpose of this chapter to require the clear and uniform disclosure of
 so that consumers can make a meaningful comparison between the competing claims of depository institutions with regard to deposit accounts.
 """
 
-regulation = {"title":"12 U.S. Code § 4301 - Findings and purpose","text":text,"status":"Not Analized","docs":{"roles":{"Compliance":"Not approved","Legal":"Not approved"}}}
+regulation = {"title":"12 U.S. Code § 4301 - Findings and purpose",
+              "id":uuid.uuid4(),
+              "text":text,
+              "status":"Not Analized",
+              "docs":[]
+            }

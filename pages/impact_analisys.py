@@ -59,15 +59,6 @@ if "messages" not in st.session_state:
 if "document" not in st.session_state:
     st.session_state.document = None
 
-if "system_params" not in st.session_state:
-    st.session_state.system_params = {}
-    st.session_state.system_params["role"] = "Compliance"
-
-if "regulations" not in st.session_state:
-    st.session_state.regulations = []
-    
-
-
 chat = ComplianceAgent(st.session_state.system_params,st.session_state.regulations[0],hash)
 
 with st.container():
@@ -111,5 +102,5 @@ with st.container():
                     if st.button(label="Approve",
                                        type="primary",
                                        use_container_width=True):
-                        doc_approved(role=st.session_state.system_params["role"],type="Regulatory Impact Analysis", doc= st.session_state.document, id_regulation=0)
+                        doc_approved(role=st.session_state.system_params["role"],type="Regulatory Impact Analysis", doc= st.session_state.document,workflow='impact_analisys', id_regulation=0)
                         

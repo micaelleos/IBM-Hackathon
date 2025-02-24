@@ -1,15 +1,18 @@
 import streamlit as st
 import time
 
-st.logo("logoComplyFlow.png",size="large")
-
 def side_bar():
     s = st.sidebar
     with s:
-        st.markdown("# ComplyFlow")
+        st.logo("logoComplyFlow.png",size="large")
+        #st.markdown("# ComplyFlow")
     s.page_link("directory.py", label="Regulation Directory", icon="📂")
     with s:
         st.write("Workflow")
-    s.page_link("pages/main.py", label="Regulatory Impact Analysis", icon="1️⃣")
-    s.page_link("pages/main2.py", label="Regulatory Action Plan", icon="2️⃣", disabled=True)
-    s.page_link("pages/main3.py", label="Internal Policies and Procedures", icon="3️⃣", disabled=True)
+        impact_analisys = st.session_state.current_regulation['impact_analisys']
+        action_plan = st.session_state.current_regulation['action_plan']
+        policies = st.session_state.current_regulation['policies']
+
+    s.page_link("pages/impact_analisys.py", label="Regulatory Impact Analysis", icon="1️⃣", disabled= impact_analisys)
+    s.page_link("pages/action_plan.py", label="Regulatory Action Plan", icon="2️⃣", disabled= action_plan)
+    s.page_link("pages/policies.py", label="Internal Policies and Procedures", icon="3️⃣", disabled = policies)
