@@ -12,7 +12,8 @@ This project was developed as part of the **Generative AI Hackathon with IBM Gra
 ✅ **Regulatory Impact Assessment** – Identifies affected areas and generates a compliance matrix.\
 ✅ **Dynamic Workflow & Approvals** – Ensures structured multi-team collaboration.\
 ✅ **Automated Action Plan Generation** – Streamlines compliance updates and implementation.\
-✅ **Real-Time Document Editing** – Users can interact and refine the AI-generated analysis.
+✅ **Real-Time Document Editing** – Users can interact and refine the AI-generated analysis.\
+✅ **AI Chatbot for Compliance Assistance** - Users can interact with Compliance AI assistent.
 
 ## 🛠️ Tech Stack
 
@@ -23,9 +24,9 @@ This project was developed as part of the **Generative AI Hackathon with IBM Gra
 
 ## 🔄 Workflow Process
 
-1️⃣ **Regulation Reception** – New regulatory document is ingested into the system.\
+1️⃣ **Regulation Reception** – The user upload the regulatory document for ingestion into the system.\
 2️⃣ **Initial Analysis & Summary** – AI extracts key requirements and summaries.\
-3️⃣ **Regulatory Impact Assessment** – Identifies affected business areas and compliance needs.\
+3️⃣ **Regulatory Impact Assessment** – AI Identifies affected business areas and compliance needs.\
 4️⃣ **Approval Process** – All impacted areas (Compliance, Legal, Risk, IT, Operations) must validate the assessment.\
 5️⃣ **Action Plan Creation** – AI generates a structured plan for implementation.\
 6️⃣ **Final Approvals** – Ensures all stakeholders validate the compliance strategy.\
@@ -37,20 +38,19 @@ To run **ComplyFlow** locally, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/seu-usuario/complyflow.git
+git clone https://github.com/micaelleos/complyflow.git
 cd complyflow
 
 # Install dependencies
 pip install -r requirements.txt
 
 # Run the Streamlit app
-streamlit run app.py
+streamlit run directory.py
 ```
 
 ## 🚀 Future Enhancements
 
 - 🌐 **Multi-Language Support**
-- 🤖 **AI Chatbot for Compliance Assistance**
 - 📊 **Advanced Risk Scoring System**
 - 🔗 **API Integrations with Compliance Databases**
 
